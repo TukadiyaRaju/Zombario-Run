@@ -1,0 +1,167 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    display: flex;
+    min-height: 100vh;
+    min-width: 100vw;
+    align-items: center;
+    justify-content: center;
+    background: #110d27;
+    font-family: 'Press Start 2P', cursive;
+}
+
+#game{
+    height: 100vh;
+    width: 80vw;
+    background: url(/Assets/bg.jpg) no-repeat;
+    background-size: 100% 100%;
+    background-position: center center;
+    padding: 50px;
+    color: white;
+    overflow: hidden;
+}
+
+#title{
+    text-align: center;
+    font-size: 42px;
+    -webkit-text-stroke: 3px black;
+    color: red;
+}
+
+.objects{
+    position: absolute;
+    bottom: 150px;
+    left: 150px;
+}
+
+#mario{
+    left: 300px;
+}
+
+.jump{
+    animation: jump 1s ease-in-out;
+}
+
+@keyframes jump {
+    0%{
+        bottom: 150px;
+    }
+    50%{
+        bottom: 350px;
+    }
+    100%{
+        bottom: 150px;
+    }
+}
+
+#obstacle{
+    /* left: 20vw; */
+    left: 90vw;
+    animation: obstacle-move 2s infinite linear;
+}
+
+@keyframes obstacle-move {
+    0%{
+        left: 80vw;
+    }
+    50%{
+        left: 50vw;
+    }
+    100%{
+        left: 10vw;
+    }
+}
+
+.killed{
+    animation: killed .5s linear;
+}
+
+@keyframes killed {
+    0%{
+        left: 150px;
+    }
+    100%{
+        left: 250px;
+    }
+}
+
+#score-box{
+    position: absolute;
+    bottom: 35px;
+    color: yellow;
+}
+
+#score-display{
+    margin-bottom: 20px;
+}
+
+.game-over{
+    display: none;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background-color: rgba(0, 0, 0, 0.63);
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    transition: 2s ease;
+    animation: go-animate 2s linear;
+}
+
+.active{
+    display: flex;
+}
+
+@keyframes go-animate {
+    0%{
+        bottom: -100vh;
+        top:100vh;
+        opacity: 1;
+        background-color: black;
+    }
+    100%{
+        bottom: 0;
+        background-color: rgba(0, 0, 0, 0.63);
+    }
+}
+
+#go{
+    margin-bottom: 40px;
+    font-size: 42px;
+    -webkit-text-stroke: 3px black;
+    color: red;
+}
+
+#final-score-display{
+    margin: 15px 0;
+    color: yellow;
+}
+
+#final-high-score-display{
+    font-size: 16px;
+    color: rgb(124, 124, 124);
+}
+
+#play-again{
+    margin-top: 35px;
+    padding: 15px;
+    border: black 3px solid;
+    background-color: yellow;
+    font-size: 16px;
+    font-family: 'Press Start 2P', cursive;
+    cursor: pointer;
+    transition: .2s ease;
+}
+
+#play-again:hover{
+    background-color: rgb(206, 31, 0);
+    color:white;
+}
