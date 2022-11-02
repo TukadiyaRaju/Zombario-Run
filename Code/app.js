@@ -105,10 +105,17 @@ document.getElementById('play-again').onclick = () => {
 }
 orientationChanged = false;
 function rotateScreen() {
-    if (window.screen.width < 1024) {
-        document.getElementById('rotate-meme').style.display = 'flex';
-        document.getElementById('game').style.display = 'none';
-        bgm.pause()
+    if (window.screen.width < 600) {
+        if (window.screen.width < 600 && window.screen.height<650) {
+            document.getElementById('not-supported').style.display = 'flex';
+            document.getElementById('game').style.display = 'none';
+            bgm.pause()
+        }
+        else {
+            document.getElementById('rotate-meme').style.display = 'flex';
+            document.getElementById('game').style.display = 'none';
+            bgm.pause()
+        }
     }
     else {
         // bgm.pause();
@@ -116,22 +123,11 @@ function rotateScreen() {
         document.getElementById('rotate-meme').style.display = 'none';
         document.getElementById('game').style.display = 'block';
     }
-    document.getElementById('rotate-meme').innerHTML=window.screen.width;
 }
 rotateScreen()
 window.addEventListener('orientationchange', () => {
     rotateScreen()
 })
-        let details = navigator.userAgent;
-        let regexp = /android|iphone|kindle|ipad/i;
-        let isMobileDevice = regexp.test(details);
-  
-        if (isMobileDevice) {
-            console.log("You are using a Mobile Device");
-        }
-        else {
-            console.log("You are using Desktop");
-        }
 
 // function getOrientation() {
 //     return screen.msOrientation ||
