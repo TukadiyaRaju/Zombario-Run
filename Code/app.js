@@ -116,6 +116,7 @@ function rotateScreen() {
         document.getElementById('rotate-meme').style.display = 'none';
         document.getElementById('game').style.display = 'block';
     }
+    document.getElementById('final-high-score').innerText=window.screen.width;
 }
 rotateScreen()
 window.addEventListener('orientationchange', () => {
