@@ -117,12 +117,9 @@ function rotateScreen() {
         document.getElementById('game').style.display = 'block';
     }
 }
-window.addEventListener('resize', ()=>{
-    // rotateScreen();
-});
+rotateScreen()
 window.addEventListener('orientationchange', () => {
-    orientationChanged = true;
-    if (orientationChanged) rotateScreen()
+    rotateScreen()
 })
 
 // function getOrientation() {
