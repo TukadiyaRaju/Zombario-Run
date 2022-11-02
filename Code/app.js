@@ -105,7 +105,7 @@ document.getElementById('play-again').onclick = () => {
 }
 orientationChanged = false;
 function rotateScreen() {
-    if (window.screen.width < 600) {
+    if (window.screen.width < 1024) {
         document.getElementById('rotate-meme').style.display = 'flex';
         document.getElementById('game').style.display = 'none';
         bgm.pause()
@@ -122,6 +122,16 @@ rotateScreen()
 window.addEventListener('orientationchange', () => {
     rotateScreen()
 })
+        let details = navigator.userAgent;
+        let regexp = /android|iphone|kindle|ipad/i;
+        let isMobileDevice = regexp.test(details);
+  
+        if (isMobileDevice) {
+            console.log("You are using a Mobile Device");
+        }
+        else {
+            console.log("You are using Desktop");
+        }
 
 // function getOrientation() {
 //     return screen.msOrientation ||
