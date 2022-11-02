@@ -106,7 +106,7 @@ document.getElementById('play-again').onclick = () => {
 orientationChanged = false;
 function rotateScreen() {
     if (window.screen.width < 600) {
-        if (window.screen.width < 600 && window.screen.height<650) {
+        if (window.screen.height<650) {
             document.getElementById('not-supported').style.display = 'flex';
             document.getElementById('game').style.display = 'none';
             bgm.pause()
