@@ -116,7 +116,7 @@ function rotateScreen() {
         document.getElementById('rotate-meme').style.display = 'none';
         document.getElementById('game').style.display = 'block';
     }
-    document.getElementById('rotate-meme').innerText+=window.screen.width;
+    document.getElementById('rotate-meme').innerHTML=window.screen.width;
 }
 rotateScreen()
 window.addEventListener('orientationchange', () => {
