@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Screen Orientation</title>
+    <meta name="viewport" content="width=device-width">
+</head>
+<body>
+    <header>
+        <h1>Screen Orientation</h1>
+    </header>
+    <main>
+        <div id="output"></div>
+    </main>    
+    <script>
+        let orn = getOrientation();
+        let out = document.getElementById('output');
+        out.textContent = orn;
+            
+        function getOrientation() {
+            return screen.msOrientation ||
+            (screen.orientation || screen.mozOrientation).type;;
+        }
+        
+        window.addEventListener('orientationchange', (ev)=>{
+            orn = getOrientation();
+            switch(orn){
+                case 'portrait-primary':
+                case 'portrait-secondary':
+                    console.log('Show the Meme to rotate')
+                    break;
+                case 'landscape-primary':
+                    document.body.setAttribute( "style", "-webkit-transform: rotate(-90deg);");
+                    console.log('Rotate your HTML page COUNTER CLOCK WISE')
+                    break;
+                case 'landscape-secondary':
+                    console.log('Rotate your HTML page CLOCK WISE')
+                    break;
+                case undefined:
+                    console.log('Not Supported')
+                    break;
+                default:
+                    console.log('Something Unknown')
+            }
+        })
+    </script>
+</body>
+</html>
