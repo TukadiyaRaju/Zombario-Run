@@ -106,14 +106,9 @@ document.getElementById('play-again').onclick = () => {
 orientationChanged = false;
 function rotateScreen() {
     if (window.screen.width < 600) {
-        if (window.screen.height<650) {
-            document.getElementById('not-supported').style.display = 'flex';
-        }
-        else {
-            document.getElementById('rotate-meme').style.display = 'flex';
-        }
-        bgm.pause()
+        document.getElementById('rotate-meme').style.display = 'flex';
         document.getElementById('game').style.display = 'none';
+        bgm.pause()
     }
     else {
         // bgm.pause();
