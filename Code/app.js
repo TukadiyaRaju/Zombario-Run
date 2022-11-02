@@ -108,14 +108,12 @@ function rotateScreen() {
     if (window.screen.width < 600) {
         if (window.screen.height<650) {
             document.getElementById('not-supported').style.display = 'flex';
-            document.getElementById('game').style.display = 'none';
-            bgm.pause()
         }
         else {
             document.getElementById('rotate-meme').style.display = 'flex';
-            document.getElementById('game').style.display = 'none';
-            bgm.pause()
         }
+        bgm.pause()
+        document.getElementById('game').style.display = 'none';
     }
     else {
         // bgm.pause();
