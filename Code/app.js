@@ -31,6 +31,7 @@ document.getElementById('start-game').onclick = () => {
     let name = input.value;
     if (name != "") {
         document.getElementById('home').style.display = 'none';
+        if (name!=localStorage.setItem('userName',name)) localStorage.setItem('high-score',0)
         localStorage.setItem('userName',name)
         main();
         click = 0;
@@ -86,7 +87,8 @@ function main() {
             }
         }
         else {
-            // window.location.reload()
+            sessionStorage.setItem('again','true');
+            window.location.reload();
         }
 
 
