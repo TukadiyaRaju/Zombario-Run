@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zombario Run</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="stylesheet" media="screen and (max-device-width: 1024px)" href="mobile-style.css" />
+</head>
+<body>
+
+    <div id="home" class="overlay">
+        <h1 class="title">Zoombario Run</h1>
+        <button id="open-login" class="btn">START THE GAME!</button>
+        <h2 id="seeInstructions" class="yellow-text">See Instructions</h2>
+
+        <div id="overlay-container" class="overlay">
+            <div id="close">X</div>
+            <div id="overlay-content">
+                <div id="instructions">
+                    <h2 class="yellow-text">Instructions</h2>
+                    <ul id="instruction-list">
+                        <li>You have to pass through the obstacles, as many as possible.</li>
+                        <li>Hit SPACE [_] to Jump Up.</li>
+                        <li>If you either jump on the obstacle or collide with it, the game is over.</li>
+                        <li>The speed will increase along the score.</li>
+                    </ul>
+                </div>
+                <div id="login">
+                    <input id="name" type="text" placeholder="First Name" required class="btn">
+                    <button class="btn" id="start-game">START THE GAME!</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="game">
+        <h1 id="title"  class="title">Zoombario Run</h1>
+
+        <div id="mario" class="objects">
+            <img src="../Assets/mario.gif" alt="">
+        </div>
+
+        <div id="zombie" class="objects">
+            <img src="../Assets/zombie3.gif" alt="">
+        </div>
+        
+        <div id="obstacle" class="objects">
+            <img src="../Assets/obs1.gif" alt="">
+        </div>
+
+        <div id="score-box">
+            <h2 id="score-display" class="yellow-text">Score: <span id="score">00</span> </h2>
+            <h2 id="high-score-display" class="yellow-text">High-Score: <span id="high-score">00</span> </h2>
+        </div>
+
+        <div id="game-over" class="game-over overlay">
+            <div id="final-score-box">
+                <h1 id="game-over-text">GAME OVER</h1>
+                <h2 id="final-score-display" class="yellow-text">Score: <span id="final-score">00</span> </h2>
+                <h2 id="final-high-score-display" class="yellow-text">High-Score: <span id="final-high-score">00</span> </h2>
+            </div>
+
+            <button id="play-again" class="btn">Play Again</button>
+        </div>
+    </div>
+
+    <div id="rotate-meme">
+        <img src="../Assets/rotate_phone_1.gif" alt="">
+    </div>
+</body>
+<script src="app.js"></script>
+</html>
