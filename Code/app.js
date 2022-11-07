@@ -7,7 +7,7 @@ let score = 0;
 let jumpCount = 0;
 let isOver = false;
 
-let phrases = ["you performed better than the previous one. Cheers!", "this score is worse than the previous one.", "you performed well but better luck next time.", "keep it up, you are playing well.", "brillian Score!", "you did well, just need little more practice.", "come on, you can do it. Just try again!"];
+let phrases = ["you performed better than the previous one. Cheers!", "this score is worse than the previous one.", "shame on you.", "keep it up, you are playing well.", "brillian Score!", "you did well, just need little more practice.", "come on, you can do it. Just try again!"];
 
 // There is no practicle use of this object and it can be done without using it. But I have used it because it was mentioned in the PDF sent by Ram.
 let userData={
