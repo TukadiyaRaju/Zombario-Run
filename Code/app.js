@@ -34,13 +34,15 @@ document.getElementById('open-login').onclick = () => {
 
 document.getElementById('start-game').onclick = () => {
     const input = document.getElementById('email');
+    const passInput = document.getElementById('password');
     let email = input.value;
+    let password = input.value;
     if (email != "") {
         document.getElementById('home').style.display = 'none';
         if (email!=userData.email) localStorage.setItem('high-score',0)
         userData.email=email;
         localStorage.setItem('userName',userData.email)
-        localStorage.setItem('password',userData.password)
+        localStorage.setItem('password',password)
         main();
         click = 0;
     }
