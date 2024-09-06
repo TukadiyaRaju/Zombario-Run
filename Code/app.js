@@ -11,7 +11,8 @@ let phrases = ["you performed better than the previous one. Cheers!", "this scor
 
 // There is no practicle use of this object and it can be done without using it. But I have used it because it was mentioned in the PDF sent by Ram.
 let userData={
-    name:'',
+    email:'',
+    pass: ''
 }
 
 if(sessionStorage.getItem('again') == 'true') {
@@ -32,13 +33,14 @@ document.getElementById('open-login').onclick = () => {
 }
 
 document.getElementById('start-game').onclick = () => {
-    const input = document.getElementById('name');
-    let name = input.value;
-    if (name != "") {
+    const input = document.getElementById('email');
+    let email = input.value;
+    if (email != "") {
         document.getElementById('home').style.display = 'none';
-        if (name!=userData.name) localStorage.setItem('high-score',0)
-        userData.name=name;
-        localStorage.setItem('userName',userData.name)
+        if (email!=userData.email) localStorage.setItem('high-score',0)
+        userData.email=email;
+        localStorage.setItem('userName',userData.email)
+        localStorage.setItem('password',userData.password)
         main();
         click = 0;
     }
