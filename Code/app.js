@@ -36,25 +36,46 @@ document.getElementById('start-game').onclick = () => {
     const input = document.getElementById('email');
     const passInput = document.getElementById('password');
     let email = input.value;
-    let password = input.value;
-    if (email != "") {
+    let password = passInput.value;
+
+    // Retrieve the existing user data array from localStorage or initialize it if not found
+    let userDataArray = JSON.parse(localStorage.getItem('userDataArray')) || [];
+
+    if (email !== "") {
         document.getElementById('home').style.display = 'none';
-        if (email!=userData.email) localStorage.setItem('high-score',0)
-        userData.email=email;
-        localStorage.setItem('userName',userData.email)
-        localStorage.setItem('password',password)
+
+        // Check if the email already exists in the array
+        const existingUserIndex = userDataArray.findIndex(user => user.email === email);
+
+        if (existingUserIndex === -1) {
+            // If the email doesn't exist, add the new email and password to the array
+            userDataArray.push({ email: email, password: password });
+        } else {
+            // If the email exists, update the password for that user
+            userDataArray[existingUserIndex].password = password;
+        }
+
+        // Save the updated array back to localStorage
+        localStorage.setItem('userDataArray', JSON.stringify(userDataArray));
+
+        // Set the current user and high score
+        if (email !== userData.email) localStorage.setItem('high-score', 0);
+        userData.email = email;
+        localStorage.setItem('userName', userData.email);
+        localStorage.setItem('password', password);
+
         main();
         click = 0;
-    }
-    else {
-        if (input.classList != 'shakeName') {
+    } else {
+        if (!input.classList.contains('shakeName')) {
             input.classList.add("shakeName");
             setTimeout(() => {
-                input.classList.remove('shakeName')
-            }, 500)
+                input.classList.remove('shakeName');
+            }, 500);
         }
     }
-}
+};
+
 
 document.getElementById('close').onclick = () => {
     document.getElementById('overlay-container').style.display = 'none';
